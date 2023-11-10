@@ -10,7 +10,7 @@ export default function SplashScreen({ navigation }) {
       >
         <TouchableOpacity
           style={styles.buttonContainer}
-          onPress={() => navigation.navigate('Audio')}
+          onPress={() => navigation.navigate('Login')}
         >
           <View style={styles.textContainer}>
             <Text style={styles.text}>AudioMemo Magic</Text>

@@ -1,19 +1,16 @@
-// RegistrationScreen.js
-import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { TextInput, Button } from 'react-native-paper';
+import React, { useState } from "react";
+import { View, StyleSheet } from "react-native";
+import { TextInput, Button } from "react-native-paper";
 
 const RegistrationScreen = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleRegister = () => {
-    // Implement your registration logic here
-    console.log('Username:', username);
-    console.log('Password:', password);
-    console.log('Email:', email);
-    // You can add registration logic here
+    console.log("Username:", username);
+    console.log("Password:", password);
+    console.log("Email:", email);
   };
 
   return (
@@ -48,7 +45,7 @@ const RegistrationScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     padding: 16,
   },
   input: {

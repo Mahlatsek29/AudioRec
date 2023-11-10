@@ -1,17 +1,20 @@
-// LoginScreen.js
-import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { TextInput, Button } from 'react-native-paper';
+import React, { useState } from "react";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { TextInput, Button } from "react-native-paper";
 
-const LoginScreen = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+const LoginScreen = ({ navigation }) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    // Implement your authentication logic here
-    console.log('Username:', username);
-    console.log('Password:', password);
-    // You can add authentication logic here
+    console.log("Username:", username);
+    console.log("Password:", password);
+
+    navigation.navigate("Audio");
+  };
+
+  const handleRegister = () => {
+    navigation.navigate("Register");
   };
 
   return (
@@ -32,6 +35,12 @@ const LoginScreen = () => {
       <Button mode="contained" onPress={handleLogin} style={styles.button}>
         Login
       </Button>
+      <Text style={styles.signUpText}>
+        Don't have an account?{""}
+        <TouchableOpacity onPress={handleRegister}>
+          <Text style={styles.signUpLink}>Register</Text>
+        </TouchableOpacity>
+      </Text>
     </View>
   );
 };
@@ -39,7 +48,7 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     padding: 16,
   },
   input: {
@@ -47,6 +56,14 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 16,
+  },
+  signUpText: {
+    marginTop: 16,
+    textAlign: "center",
+  },
+  signUpLink: {
+    color: "blue",
+    fontWeight: "bold",
   },
 });
 
