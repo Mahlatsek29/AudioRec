@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
-import { Audio } from 'expo-av';
+import {Audio} from 'expo-av';
 import * as Sharing from 'expo-sharing';
 import { FontAwesome5 } from 'react-native-vector-icons';
 

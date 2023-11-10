@@ -5,7 +5,7 @@ export default function SplashScreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ImageBackground
-        source={require('./assets/voice.gif')}
+        source={require('../assets/voice.gif')}
         style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
       >
         <TouchableOpacity
