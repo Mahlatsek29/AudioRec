@@ -5,14 +5,15 @@ import SplashScreen from './Screens/SplashScreen';
 import LoginScreen from './Screens/LoginScreen';
 import RegistrationScreen from './Screens/RegistrationScreen';
 import AudioScreen from './Screens/AudioScreen';
+import { firebase } from './config';
 
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
- <Stack.Navigator initialRouteName="Splash">        
-      <Stack.Screen name="Splash" component={SplashScreen} />
+      <Stack.Navigator initialRouteName="Splash">
+        <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegistrationScreen} />
         <Stack.Screen name="Audio" component={AudioScreen} />

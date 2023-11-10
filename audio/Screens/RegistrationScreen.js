@@ -1,16 +1,36 @@
-import React, { useState } from "react";
+// RegistrationScreen.js
+
+import React from "react";
 import { View, StyleSheet } from "react-native";
 import { TextInput, Button } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
+import { firebase } from "../config";
 
 const RegistrationScreen = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const navigation = useNavigation();
 
-  const handleRegister = () => {
-    console.log("Username:", username);
-    console.log("Password:", password);
-    console.log("Email:", email);
+  const handleRegister = async () => {
+    const trimmedEmail = email.trim();
+
+    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail);
+    if (!isEmailValid) {
+      console.error("Invalid email format");
+      return;
+    }
+
+    try {
+      const userCredential = await firebase
+        .auth()
+        .createUserWithEmailAndPassword(trimmedEmail, password);
+      console.log("User registered:", userCredential.user);
+
+      navigation.navigate("Login");
+    } catch (error) {
+      console.error("Registration failed:", error.message);
+    }
   };
 
   return (
