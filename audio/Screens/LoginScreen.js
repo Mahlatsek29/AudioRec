@@ -4,12 +4,12 @@ import { TextInput, Button } from "react-native-paper";
 import { firebase } from '../config';
 
 const LoginScreen = ({ navigation }) => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     try {
-      const userCredential = await firebase.auth().signInWithEmailAndPassword(username, password);
+      const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
       console.log("User logged in:", userCredential.user);
       navigation.navigate("Audio");
     } catch (error) {
@@ -24,10 +24,11 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TextInput
-        label="Username"
-        value={username}
-        onChangeText={(text) => setUsername(text)}
+        label="Email"
+        value={email}
+        onChangeText={(text) => setEmail(text)}
         style={styles.input}
+        autoCapitalize="none" // Ensure email is not auto-capitalized
       />
       <TextInput
         label="Password"
