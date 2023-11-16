@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 16,
+    backgroundColor: "#3498db",
   },
   input: {
     marginBottom: 12,

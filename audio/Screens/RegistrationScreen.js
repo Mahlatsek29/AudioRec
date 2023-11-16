@@ -65,12 +65,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 16,
+    backgroundColor:'#3498db',
   },
   input: {
     marginBottom: 12,
+    borderRadius: 5,
+    
   },
   button: {
     marginTop: 16,
+    color: '#2ecc71',
   },
 });
 
